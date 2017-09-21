@@ -1,0 +1,1462 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> Reading design: NYU_PROCESSOR.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "NYU_PROCESSOR.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "NYU_PROCESSOR"
+Output Format                      : NGC
+Target Device                      : xc7a100t-1-csg324
+
+---- Source Options
+Top Module Name                    : NYU_PROCESSOR
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\reg_file.vhd" into library work
+Parsing entity <reg_file>.
+Parsing architecture <Behavioral> of entity <reg_file>.
+Parsing VHDL file "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\PC_reg.vhd" into library work
+Parsing entity <PC_reg>.
+Parsing architecture <Behavioral> of entity <pc_reg>.
+Parsing VHDL file "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\Decode_unit.vhd" into library work
+Parsing entity <Decode_unit>.
+Parsing architecture <Decoder_ARCHITECTURE> of entity <decode_unit>.
+Parsing VHDL file "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\asynch_ram.vhd" into library work
+Parsing entity <asynch_ram>.
+Parsing architecture <Behavioral> of entity <asynch_ram>.
+Parsing VHDL file "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\ALU_unit.vhd" into library work
+Parsing entity <ALU_unit>.
+Parsing architecture <ALU_ARCHITECTURE> of entity <alu_unit>.
+Parsing VHDL file "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\NYU_Processor.vhd" into library work
+Parsing entity <NYU_PROCESSOR>.
+Parsing architecture <PROCESSOR_ARCHITECTURE> of entity <nyu_processor>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <NYU_PROCESSOR> (architecture <PROCESSOR_ARCHITECTURE>) from library <work>.
+
+Elaborating entity <PC_reg> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\PC_reg.vhd" Line 55: pc_reg should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\PC_reg.vhd" Line 59: data_pc_in should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\PC_reg.vhd" Line 61: pc_reg should be on the sensitivity list of the process
+
+Elaborating entity <asynch_ram> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:634 - "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\asynch_ram.vhd" Line 44: Net <ram[11][15]> does not have a driver.
+
+Elaborating entity <reg_file> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <Decode_unit> (architecture <Decoder_ARCHITECTURE>) from library <work>.
+
+Elaborating entity <ALU_unit> (architecture <ALU_ARCHITECTURE>) from library <work>.
+WARNING:HDLCompiler:1127 - "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\ALU_unit.vhd" Line 50: Assignment to rs1 ignored, since the identifier is never used
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <NYU_PROCESSOR>.
+    Related source file is "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\NYU_Processor.vhd".
+WARNING:Xst:647 - Input <switch<15:9>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit register for signal <anode_counter>.
+    Found 32-bit adder for signal <anode_counter[31]_GND_6_o_add_10_OUT> created at line 263.
+    Found 16x7-bit Read Only RAM for signal <ca_output>
+    Found 8x8-bit Read Only RAM for signal <an_output>
+    Found 1-bit 5-to-1 multiplexer for signal <segment_digit<3>> created at line 271.
+    Found 1-bit 5-to-1 multiplexer for signal <segment_digit<2>> created at line 271.
+    Found 1-bit 5-to-1 multiplexer for signal <segment_digit<1>> created at line 271.
+    Found 1-bit 5-to-1 multiplexer for signal <segment_digit<0>> created at line 271.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_output<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_output<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_output<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_output<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_output<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_output<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_output<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_output<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_output<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_output<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_output<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_output<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_output<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_output<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_output<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <display_output<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <switch_incr_pc>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   2 RAM(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  32 D-type flip-flop(s).
+	inferred  17 Latch(s).
+	inferred  84 Multiplexer(s).
+Unit <NYU_PROCESSOR> synthesized.
+
+Synthesizing Unit <PC_reg>.
+    Related source file is "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\PC_reg.vhd".
+    Found 8-bit adder for signal <pc_reg[7]_GND_7_o_add_1_OUT> created at line 55.
+WARNING:Xst:737 - Found 1-bit latch for signal <pc_reg<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pc_reg<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pc_reg<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pc_reg<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pc_reg<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pc_reg<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pc_reg<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pc_reg<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   8 Latch(s).
+	inferred   8 Multiplexer(s).
+Unit <PC_reg> synthesized.
+
+Synthesizing Unit <asynch_ram>.
+    Related source file is "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\asynch_ram.vhd".
+WARNING:Xst:653 - Signal <ram<11>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<12>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<13>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<14>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<15>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<16>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<17>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<18>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<19>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<20>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<21>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<22>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<23>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<24>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<25>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<26>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<27>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<28>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<29>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<30>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<31>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<32>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<33>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<34>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<35>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<36>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<37>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<38>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<39>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<40>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<41>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<42>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<43>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<44>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<45>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<46>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<47>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<48>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<49>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<50>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<51>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<52>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<53>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<54>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<55>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<56>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<57>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<58>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<59>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<60>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<61>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<62>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<63>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<64>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<65>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<66>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<67>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<68>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<69>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<70>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<71>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<72>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<73>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<74>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<75>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<76>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<77>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<78>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<79>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<80>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<81>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<82>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<83>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<84>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<85>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<86>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<87>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<88>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<89>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<90>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<91>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<92>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<93>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<94>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<95>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<96>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<97>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<98>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<99>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<100>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<101>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<102>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<103>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<104>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<105>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<106>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<107>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<108>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<109>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<110>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<111>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<112>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<113>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<114>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<115>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<116>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<117>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<118>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<119>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<120>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<121>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<122>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<123>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<124>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<125>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<126>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<127>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<128>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<129>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<130>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<131>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<132>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<133>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<134>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<135>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<136>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<137>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<138>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<139>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<140>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<141>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<142>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<143>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<144>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<145>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<146>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<147>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<148>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<149>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<150>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<151>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<152>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<153>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<154>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<155>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<156>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<157>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<158>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<159>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<160>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<161>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<162>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<163>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<164>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<165>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<166>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<167>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<168>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<169>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<170>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<171>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<172>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<173>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<174>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<175>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<176>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<177>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<178>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<179>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<180>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<181>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<182>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<183>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<184>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<185>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<186>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<187>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<188>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<189>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<190>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<191>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<192>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<193>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<194>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<195>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<196>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<197>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<198>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<199>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<200>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<201>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<202>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<203>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<204>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<205>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<206>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<207>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<208>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<209>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<210>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<211>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<212>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<213>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<214>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<215>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<216>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<217>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<218>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<219>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<220>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<221>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<222>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<223>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<224>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<225>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<226>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<227>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<228>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<229>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<230>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<231>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<232>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<233>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<234>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<235>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<236>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<237>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<238>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<239>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<240>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<241>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<242>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<243>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<244>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<245>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<246>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<247>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<248>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<249>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<250>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<251>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<252>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<253>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<254>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ram<255>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 16-bit register for signal <ram<1>>.
+    Found 16-bit register for signal <ram<2>>.
+    Found 16-bit register for signal <ram<3>>.
+    Found 16-bit register for signal <ram<4>>.
+    Found 16-bit register for signal <ram<5>>.
+    Found 16-bit register for signal <ram<6>>.
+    Found 16-bit register for signal <ram<7>>.
+    Found 16-bit register for signal <ram<8>>.
+    Found 16-bit register for signal <ram<9>>.
+    Found 16-bit register for signal <ram<10>>.
+    Found 16-bit register for signal <ram<0>>.
+    Summary:
+	inferred 176 D-type flip-flop(s).
+	inferred  11 Multiplexer(s).
+Unit <asynch_ram> synthesized.
+
+Synthesizing Unit <reg_file>.
+    Related source file is "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\reg_file.vhd".
+    Found 8-bit register for signal <ram<1>>.
+    Found 8-bit register for signal <ram<2>>.
+    Found 8-bit register for signal <ram<3>>.
+    Found 8-bit register for signal <ram<4>>.
+    Found 8-bit register for signal <ram<5>>.
+    Found 8-bit register for signal <ram<6>>.
+    Found 8-bit register for signal <ram<7>>.
+    Found 8-bit register for signal <reg0>.
+    Found 8-bit register for signal <reg1>.
+    Found 8-bit register for signal <reg2>.
+    Found 8-bit register for signal <reg3>.
+    Found 8-bit register for signal <reg4>.
+    Found 8-bit register for signal <reg5>.
+    Found 8-bit register for signal <reg6>.
+    Found 8-bit register for signal <reg7>.
+    Found 8-bit register for signal <ram<0>>.
+    Found 8-bit 8-to-1 multiplexer for signal <data_out1> created at line 62.
+    Found 8-bit 8-to-1 multiplexer for signal <data_out2> created at line 63.
+    Summary:
+	inferred 128 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <reg_file> synthesized.
+
+Synthesizing Unit <Decode_unit>.
+    Related source file is "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\Decode_unit.vhd".
+WARNING:Xst:647 - Input <pc_out> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 3-bit register for signal <decode_rd>.
+    Found 3-bit register for signal <decode_rs1>.
+    Found 3-bit register for signal <decode_rs2>.
+    Found 3-bit register for signal <decode_tail>.
+    Found 4-bit register for signal <decode_opcode>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <Decode_unit> synthesized.
+
+Synthesizing Unit <ALU_unit>.
+    Related source file is "C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\ALU_unit.vhd".
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 3-bit register for signal <addr_Rs1>.
+    Found 3-bit register for signal <addr_Rs2>.
+    Found 3-bit register for signal <addr_Rd>.
+    Found 8-bit register for signal <asynch_ram_index_jump>.
+    Found 8-bit register for signal <immediate_offset_modulo_result>.
+    Found 8-bit register for signal <branch_offset_modulo_result>.
+    Found 8-bit register for signal <data_in>.
+    Found 1-bit register for signal <incr_pc>.
+    Found 8-bit register for signal <data_pc_in>.
+    Found 4-bit register for signal <opcode>.
+    Found 6-bit register for signal <immediate_offset>.
+    Found 6-bit register for signal <branch_offset>.
+    Found 8-bit adder for signal <data_out1[7]_data_out2[7]_add_16_OUT> created at line 82.
+    Found 8-bit adder for signal <data_out1[7]_immediate_offset[7]_add_18_OUT> created at line 87.
+    Found 8-bit subtractor for signal <GND_19_o_GND_19_o_sub_1_OUT<7:0>> created at line 1314.
+    Found 8-bit subtractor for signal <GND_19_o_GND_19_o_sub_4_OUT<7:0>> created at line 71.
+    Found 8-bit subtractor for signal <GND_19_o_GND_19_o_sub_6_OUT<7:0>> created at line 1308.
+    Found 8-bit subtractor for signal <GND_19_o_GND_19_o_sub_11_OUT<7:0>> created at line 77.
+    Found 8-bit subtractor for signal <GND_19_o_GND_19_o_sub_13_OUT<7:0>> created at line 1308.
+    Found 8-bit subtractor for signal <GND_19_o_GND_19_o_sub_21_OUT<7:0>> created at line 93.
+    Found 8-bit subtractor for signal <GND_19_o_GND_19_o_sub_23_OUT<7:0>> created at line 98.
+    Found 8-bit comparator greater for signal <immediate_offset[7]_asynch_ram_index_jump[7]_LessThan_2_o> created at line 68
+    Found 8-bit comparator lessequal for signal <asynch_ram_index_jump[7]_immediate_offset[7]_LessThan_3_o> created at line 70
+    Found 8-bit comparator greater for signal <branch_offset[7]_asynch_ram_index_jump[7]_LessThan_9_o> created at line 74
+    Found 8-bit comparator lessequal for signal <asynch_ram_index_jump[7]_branch_offset[7]_LessThan_10_o> created at line 76
+    Found 8-bit comparator lessequal for signal <data_out1[7]_data_out2[7]_LessThan_55_o> created at line 179
+    Found 8-bit comparator equal for signal <data_out1[7]_data_out2[7]_equal_58_o> created at line 187
+    WARNING:Xst:2404 -  FFs/Latches <immediate_offset<7:6>> (without init value) have a constant value of 0 in block <ALU_unit>.
+    WARNING:Xst:2404 -  FFs/Latches <branch_offset<7:6>> (without init value) have a constant value of 0 in block <ALU_unit>.
+    Summary:
+	inferred   6 Adder/Subtractor(s).
+	inferred  65 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+	inferred  50 Multiplexer(s).
+Unit <ALU_unit> synthesized.
+
+Synthesizing Unit <mod_8u_4u>.
+    Related source file is "".
+    Found 12-bit adder for signal <n0241> created at line 0.
+    Found 12-bit adder for signal <GND_20_o_b[3]_add_1_OUT> created at line 0.
+    Found 11-bit adder for signal <n0245> created at line 0.
+    Found 11-bit adder for signal <GND_20_o_b[3]_add_3_OUT> created at line 0.
+    Found 10-bit adder for signal <n0249> created at line 0.
+    Found 10-bit adder for signal <GND_20_o_b[3]_add_5_OUT> created at line 0.
+    Found 9-bit adder for signal <n0253> created at line 0.
+    Found 9-bit adder for signal <GND_20_o_b[3]_add_7_OUT> created at line 0.
+    Found 8-bit adder for signal <n0257> created at line 0.
+    Found 8-bit adder for signal <a[7]_b[3]_add_9_OUT> created at line 0.
+    Found 8-bit adder for signal <n0261> created at line 0.
+    Found 8-bit adder for signal <a[7]_GND_20_o_add_11_OUT> created at line 0.
+    Found 8-bit adder for signal <n0265> created at line 0.
+    Found 8-bit adder for signal <a[7]_GND_20_o_add_13_OUT> created at line 0.
+    Found 8-bit adder for signal <n0269> created at line 0.
+    Found 8-bit adder for signal <a[7]_GND_20_o_add_15_OUT> created at line 0.
+    Found 8-bit adder for signal <n0273> created at line 0.
+    Found 8-bit adder for signal <a[7]_GND_20_o_add_17_OUT> created at line 0.
+    Found 12-bit comparator lessequal for signal <BUS_0001> created at line 0
+    Found 11-bit comparator lessequal for signal <BUS_0002> created at line 0
+    Found 10-bit comparator lessequal for signal <BUS_0003> created at line 0
+    Found 9-bit comparator lessequal for signal <BUS_0004> created at line 0
+    Found 8-bit comparator lessequal for signal <BUS_0005> created at line 0
+    Found 8-bit comparator lessequal for signal <BUS_0006> created at line 0
+    Found 8-bit comparator lessequal for signal <BUS_0007> created at line 0
+    Found 8-bit comparator lessequal for signal <BUS_0008> created at line 0
+    Found 8-bit comparator lessequal for signal <BUS_0009> created at line 0
+    Summary:
+	inferred  18 Adder/Subtractor(s).
+	inferred   9 Comparator(s).
+	inferred  65 Multiplexer(s).
+Unit <mod_8u_4u> synthesized.
+
+Synthesizing Unit <div_8u_8u>.
+    Related source file is "".
+    Found 16-bit adder for signal <n0292> created at line 0.
+    Found 16-bit adder for signal <GND_21_o_b[7]_add_1_OUT> created at line 0.
+    Found 15-bit adder for signal <n0296> created at line 0.
+    Found 15-bit adder for signal <GND_21_o_b[7]_add_3_OUT> created at line 0.
+    Found 14-bit adder for signal <n0300> created at line 0.
+    Found 14-bit adder for signal <GND_21_o_b[7]_add_5_OUT> created at line 0.
+    Found 13-bit adder for signal <n0304> created at line 0.
+    Found 13-bit adder for signal <GND_21_o_b[7]_add_7_OUT> created at line 0.
+    Found 12-bit adder for signal <n0308> created at line 0.
+    Found 12-bit adder for signal <GND_21_o_b[7]_add_9_OUT> created at line 0.
+    Found 11-bit adder for signal <n0312> created at line 0.
+    Found 11-bit adder for signal <GND_21_o_b[7]_add_11_OUT> created at line 0.
+    Found 10-bit adder for signal <n0316> created at line 0.
+    Found 10-bit adder for signal <GND_21_o_b[7]_add_13_OUT> created at line 0.
+    Found 9-bit adder for signal <n0320> created at line 0.
+    Found 9-bit adder for signal <GND_21_o_b[7]_add_15_OUT> created at line 0.
+    Found 16-bit comparator lessequal for signal <BUS_0001> created at line 0
+    Found 15-bit comparator lessequal for signal <BUS_0002> created at line 0
+    Found 14-bit comparator lessequal for signal <BUS_0003> created at line 0
+    Found 13-bit comparator lessequal for signal <BUS_0004> created at line 0
+    Found 12-bit comparator lessequal for signal <BUS_0005> created at line 0
+    Found 11-bit comparator lessequal for signal <BUS_0006> created at line 0
+    Found 10-bit comparator lessequal for signal <BUS_0007> created at line 0
+    Found 9-bit comparator lessequal for signal <BUS_0008> created at line 0
+    Found 8-bit comparator lessequal for signal <BUS_0009> created at line 0
+    Summary:
+	inferred  16 Adder/Subtractor(s).
+	inferred   9 Comparator(s).
+	inferred  57 Multiplexer(s).
+Unit <div_8u_8u> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 16x7-bit single-port Read Only RAM                    : 1
+ 8x8-bit single-port Read Only RAM                     : 1
+# Adders/Subtractors                                   : 60
+ 10-bit adder                                          : 6
+ 11-bit adder                                          : 6
+ 12-bit adder                                          : 6
+ 13-bit adder                                          : 2
+ 14-bit adder                                          : 2
+ 15-bit adder                                          : 2
+ 16-bit adder                                          : 2
+ 32-bit adder                                          : 1
+ 8-bit adder                                           : 21
+ 8-bit addsub                                          : 1
+ 8-bit subtractor                                      : 5
+ 9-bit adder                                           : 6
+# Registers                                            : 44
+ 16-bit register                                       : 11
+ 3-bit register                                        : 7
+ 32-bit register                                       : 1
+ 4-bit register                                        : 2
+ 6-bit register                                        : 2
+ 8-bit register                                        : 21
+# Latches                                              : 25
+ 1-bit latch                                           : 25
+# Comparators                                          : 33
+ 10-bit comparator lessequal                           : 3
+ 11-bit comparator lessequal                           : 3
+ 12-bit comparator lessequal                           : 3
+ 13-bit comparator lessequal                           : 1
+ 14-bit comparator lessequal                           : 1
+ 15-bit comparator lessequal                           : 1
+ 16-bit comparator lessequal                           : 1
+ 8-bit comparator equal                                : 1
+ 8-bit comparator greater                              : 2
+ 8-bit comparator lessequal                            : 14
+ 9-bit comparator lessequal                            : 3
+# Multiplexers                                         : 342
+ 1-bit 2-to-1 multiplexer                              : 310
+ 1-bit 5-to-1 multiplexer                              : 4
+ 16-bit 2-to-1 multiplexer                             : 11
+ 4-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 13
+ 8-bit 8-to-1 multiplexer                              : 2
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <addr_Rd_0> in Unit <ALU_component> is equivalent to the following FF/Latch, which will be removed : <branch_offset_3> 
+INFO:Xst:2261 - The FF/Latch <addr_Rd_1> in Unit <ALU_component> is equivalent to the following FF/Latch, which will be removed : <branch_offset_4> 
+INFO:Xst:2261 - The FF/Latch <addr_Rd_2> in Unit <ALU_component> is equivalent to the following FF/Latch, which will be removed : <branch_offset_5> 
+INFO:Xst:2261 - The FF/Latch <addr_Rs2_0> in Unit <ALU_component> is equivalent to the following FF/Latch, which will be removed : <immediate_offset_3> 
+INFO:Xst:2261 - The FF/Latch <addr_Rs2_1> in Unit <ALU_component> is equivalent to the following FF/Latch, which will be removed : <immediate_offset_4> 
+INFO:Xst:2261 - The FF/Latch <addr_Rs2_2> in Unit <ALU_component> is equivalent to the following FF/Latch, which will be removed : <immediate_offset_5> 
+INFO:Xst:2261 - The FF/Latch <branch_offset_0> in Unit <ALU_component> is equivalent to the following FF/Latch, which will be removed : <immediate_offset_0> 
+INFO:Xst:2261 - The FF/Latch <branch_offset_1> in Unit <ALU_component> is equivalent to the following FF/Latch, which will be removed : <immediate_offset_1> 
+INFO:Xst:2261 - The FF/Latch <branch_offset_2> in Unit <ALU_component> is equivalent to the following FF/Latch, which will be removed : <immediate_offset_2> 
+WARNING:Xst:1710 - FF/Latch <ram_9_14> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_9_15> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_7_0> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_7_1> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_7_2> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_7_3> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_7_4> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_7_5> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_7_6> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_7_7> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_7_8> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_7_9> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_7_10> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_7_11> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_7_12> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_7_13> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_7_14> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_7_15> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_8_0> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_8_1> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_8_2> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_8_3> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_5_8> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_5_9> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_5_10> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_5_11> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_5_12> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_5_13> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_5_14> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_5_15> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_9_0> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_9_1> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_9_2> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_9_3> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_9_4> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_9_5> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_9_6> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_9_7> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_9_8> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_9_9> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_9_10> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_9_11> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_9_12> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_9_13> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_10_10> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_10_11> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_10_12> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_10_13> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_10_14> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_10_15> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_0_0> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_0_1> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_0_2> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_0_3> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_0_4> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_0_5> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_0_6> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_0_7> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_0_8> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_0_9> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_0_10> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_0_11> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_0_12> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_0_13> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_0_14> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_0_15> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_8_4> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_8_5> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_8_6> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_8_7> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_8_8> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_8_9> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_8_10> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_8_11> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_8_12> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_8_13> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_8_14> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_8_15> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_10_0> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_10_1> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_10_2> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_10_3> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_10_4> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_10_5> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_10_6> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_10_7> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_10_8> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_10_9> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_1_6> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_1_7> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_1_8> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_1_9> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_1_10> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_1_11> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_1_12> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_1_13> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_1_14> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_1_15> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_2_0> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_2_1> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_2_2> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_2_3> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_2_4> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_2_5> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_2_6> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_2_7> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_2_8> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_2_9> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_2_10> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_2_11> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_3_0> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_3_1> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_3_2> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_3_3> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_3_4> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_3_5> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_3_6> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_3_7> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_3_8> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_3_9> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_3_10> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_3_11> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_3_12> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_3_13> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_3_14> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_3_15> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_1_0> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_1_1> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_1_2> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_1_3> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_1_4> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_1_5> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_4_2> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_4_3> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_4_4> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_4_5> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_4_6> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_4_7> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_4_8> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_4_9> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_4_10> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_4_11> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_4_12> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_4_13> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_4_14> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_4_15> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_5_0> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_5_1> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_5_2> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_5_3> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_5_4> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_5_5> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_5_6> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_5_7> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_2_12> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_2_13> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_2_14> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_2_15> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_6_0> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_6_1> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_6_2> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_6_3> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_6_4> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_6_5> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_6_6> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_6_7> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_6_8> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_6_9> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_6_10> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_6_11> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_6_12> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_6_13> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_6_14> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_6_15> (without init value) has a constant value of 1 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_4_0> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_4_1> (without init value) has a constant value of 0 in block <asynch_ram_component>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <NYU_PROCESSOR>.
+The following registers are absorbed into counter <anode_counter>: 1 register on signal <anode_counter>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_an_output> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 8-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <anode_counter> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <an_output>     |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_ca_output> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 7-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <segment_digit> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <ca_output>     |          |
+    -----------------------------------------------------------------------
+Unit <NYU_PROCESSOR> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 16x7-bit single-port distributed Read Only RAM        : 1
+ 8x8-bit single-port distributed Read Only RAM         : 1
+# Adders/Subtractors                                   : 33
+ 4-bit adder carry in                                  : 2
+ 8-bit adder                                           : 1
+ 8-bit adder carry in                                  : 24
+ 8-bit addsub                                          : 1
+ 8-bit subtractor                                      : 5
+# Counters                                             : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 385
+ Flip-Flops                                            : 385
+# Comparators                                          : 33
+ 10-bit comparator lessequal                           : 3
+ 11-bit comparator lessequal                           : 3
+ 12-bit comparator lessequal                           : 3
+ 13-bit comparator lessequal                           : 1
+ 14-bit comparator lessequal                           : 1
+ 15-bit comparator lessequal                           : 1
+ 16-bit comparator lessequal                           : 1
+ 8-bit comparator equal                                : 1
+ 8-bit comparator greater                              : 2
+ 8-bit comparator lessequal                            : 14
+ 9-bit comparator lessequal                            : 3
+# Multiplexers                                         : 506
+ 1-bit 2-to-1 multiplexer                              : 486
+ 1-bit 5-to-1 multiplexer                              : 4
+ 16-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 11
+ 8-bit 8-to-1 multiplexer                              : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <ram_9_14> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_9_15> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_7_0> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_7_1> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_7_2> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_7_3> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_7_4> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_7_5> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_7_6> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_7_7> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_7_8> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_7_9> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_7_10> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_7_11> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_7_12> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_7_13> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_7_14> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_7_15> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_8_0> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_8_1> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_8_2> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_8_3> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_5_8> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_5_9> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_5_10> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_5_11> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_5_12> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_5_13> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_5_14> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_5_15> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_9_0> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_9_1> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_9_2> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_9_3> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_9_4> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_9_5> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_9_6> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_9_7> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_9_8> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_9_9> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_9_10> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_9_11> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_9_12> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_9_13> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_10_10> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_10_11> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_10_12> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_10_13> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_10_14> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_10_15> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_0_0> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_0_1> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_0_2> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_0_3> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_0_4> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_0_5> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_0_6> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_0_7> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_0_8> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_0_9> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_0_10> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_0_11> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_0_12> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_0_13> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_0_14> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_0_15> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_8_4> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_8_5> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_8_6> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_8_7> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_8_8> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_8_9> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_8_10> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_8_11> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_8_12> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_8_13> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_8_14> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_8_15> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_10_0> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_10_1> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_10_2> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_10_3> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_10_4> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_10_5> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_10_6> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_10_7> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_10_8> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_10_9> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_1_6> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_1_7> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_1_8> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_1_9> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_1_10> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_1_11> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_1_12> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_1_13> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_1_14> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_1_15> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_2_0> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_2_1> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_2_2> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_2_3> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_2_4> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_2_5> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_2_6> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_2_7> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_2_8> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_2_9> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_2_10> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_2_11> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_3_0> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_3_1> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_3_2> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_3_3> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_3_4> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_3_5> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_3_6> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_3_7> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_3_8> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_3_9> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_3_10> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_3_11> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_3_12> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_3_13> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_3_14> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_3_15> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_1_0> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_1_1> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_1_2> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_1_3> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_1_4> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_1_5> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_4_2> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_4_3> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_4_4> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_4_5> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_4_6> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_4_7> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_4_8> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_4_9> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_4_10> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_4_11> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_4_12> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_4_13> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_4_14> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_4_15> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_5_0> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_5_1> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_5_2> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_5_3> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_5_4> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_5_5> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_5_6> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_5_7> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_2_12> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_2_13> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_2_14> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_2_15> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_6_0> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_6_1> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_6_2> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_6_3> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_6_4> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_6_5> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_6_6> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_6_7> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_6_8> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_6_9> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_6_10> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_6_11> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_6_12> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_6_13> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_6_14> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_6_15> (without init value) has a constant value of 1 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_4_0> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram_4_1> (without init value) has a constant value of 0 in block <asynch_ram>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <addr_Rd_0> in Unit <ALU_unit> is equivalent to the following FF/Latch, which will be removed : <branch_offset_3> 
+INFO:Xst:2261 - The FF/Latch <addr_Rd_1> in Unit <ALU_unit> is equivalent to the following FF/Latch, which will be removed : <branch_offset_4> 
+INFO:Xst:2261 - The FF/Latch <addr_Rd_2> in Unit <ALU_unit> is equivalent to the following FF/Latch, which will be removed : <branch_offset_5> 
+INFO:Xst:2261 - The FF/Latch <addr_Rs2_0> in Unit <ALU_unit> is equivalent to the following FF/Latch, which will be removed : <immediate_offset_3> 
+INFO:Xst:2261 - The FF/Latch <addr_Rs2_1> in Unit <ALU_unit> is equivalent to the following FF/Latch, which will be removed : <immediate_offset_4> 
+INFO:Xst:2261 - The FF/Latch <addr_Rs2_2> in Unit <ALU_unit> is equivalent to the following FF/Latch, which will be removed : <immediate_offset_5> 
+INFO:Xst:2261 - The FF/Latch <immediate_offset_0> in Unit <ALU_unit> is equivalent to the following FF/Latch, which will be removed : <branch_offset_0> 
+INFO:Xst:2261 - The FF/Latch <immediate_offset_1> in Unit <ALU_unit> is equivalent to the following FF/Latch, which will be removed : <branch_offset_1> 
+INFO:Xst:2261 - The FF/Latch <immediate_offset_2> in Unit <ALU_unit> is equivalent to the following FF/Latch, which will be removed : <branch_offset_2> 
+WARNING:Xst:2677 - Node <anode_counter_19> of sequential type is unconnected in block <NYU_PROCESSOR>.
+WARNING:Xst:2677 - Node <anode_counter_20> of sequential type is unconnected in block <NYU_PROCESSOR>.
+WARNING:Xst:2677 - Node <anode_counter_21> of sequential type is unconnected in block <NYU_PROCESSOR>.
+WARNING:Xst:2677 - Node <anode_counter_22> of sequential type is unconnected in block <NYU_PROCESSOR>.
+WARNING:Xst:2677 - Node <anode_counter_23> of sequential type is unconnected in block <NYU_PROCESSOR>.
+WARNING:Xst:2677 - Node <anode_counter_24> of sequential type is unconnected in block <NYU_PROCESSOR>.
+WARNING:Xst:2677 - Node <anode_counter_25> of sequential type is unconnected in block <NYU_PROCESSOR>.
+WARNING:Xst:2677 - Node <anode_counter_26> of sequential type is unconnected in block <NYU_PROCESSOR>.
+WARNING:Xst:2677 - Node <anode_counter_27> of sequential type is unconnected in block <NYU_PROCESSOR>.
+WARNING:Xst:2677 - Node <anode_counter_28> of sequential type is unconnected in block <NYU_PROCESSOR>.
+WARNING:Xst:2677 - Node <anode_counter_29> of sequential type is unconnected in block <NYU_PROCESSOR>.
+WARNING:Xst:2677 - Node <anode_counter_30> of sequential type is unconnected in block <NYU_PROCESSOR>.
+WARNING:Xst:2677 - Node <anode_counter_31> of sequential type is unconnected in block <NYU_PROCESSOR>.
+INFO:Xst:2261 - The FF/Latch <branch_offset_modulo_result_4> in Unit <ALU_unit> is equivalent to the following 3 FFs/Latches, which will be removed : <branch_offset_modulo_result_5> <branch_offset_modulo_result_6> <branch_offset_modulo_result_7> 
+INFO:Xst:2261 - The FF/Latch <immediate_offset_modulo_result_4> in Unit <ALU_unit> is equivalent to the following 3 FFs/Latches, which will be removed : <immediate_offset_modulo_result_5> <immediate_offset_modulo_result_6> <immediate_offset_modulo_result_7> 
+INFO:Xst:2261 - The FF/Latch <display_output_15> in Unit <NYU_PROCESSOR> is equivalent to the following FF/Latch, which will be removed : <display_output_13> 
+WARNING:Xst:3001 - This design contains one or more registers or latches with an active
+   asynchronous set and asynchronous reset. While this circuit can be built,
+   it creates a sub-optimal implementation in terms of area, power and
+   performance. For a more optimal implementation Xilinx highly recommends
+   one of the following:
+
+          1) Remove either the set or reset from all registers and latches if
+             not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Artix7 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set and reset:
+    switch_incr_pc in unit <NYU_PROCESSOR>
+
+
+Optimizing unit <Decode_unit> ...
+
+Optimizing unit <NYU_PROCESSOR> ...
+
+Optimizing unit <reg_file> ...
+
+Optimizing unit <ALU_unit> ...
+INFO:Xst:2261 - The FF/Latch <data_pc_in_4> in Unit <ALU_unit> is equivalent to the following 3 FFs/Latches, which will be removed : <data_pc_in_5> <data_pc_in_6> <data_pc_in_7> 
+
+Optimizing unit <div_8u_8u> ...
+
+Optimizing unit <PC_reg> ...
+WARNING:Xst:1710 - FF/Latch <DECODE_UNIT_component/decode_rs2_2> (without init value) has a constant value of 0 in block <NYU_PROCESSOR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ALU_component/addr_Rs2_2> (without init value) has a constant value of 0 in block <NYU_PROCESSOR>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <ALU_component/opcode_3> in Unit <NYU_PROCESSOR> is equivalent to the following FF/Latch, which will be removed : <ALU_component/opcode_1> 
+INFO:Xst:2261 - The FF/Latch <DECODE_UNIT_component/decode_opcode_3> in Unit <NYU_PROCESSOR> is equivalent to the following FF/Latch, which will be removed : <DECODE_UNIT_component/decode_opcode_1> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block NYU_PROCESSOR, actual ratio is 0.
+
+Final Macro Processing ...
+
+Processing Unit <NYU_PROCESSOR> :
+	Found 2-bit shift register for signal <ALU_component/addr_Rs2_1>.
+	Found 2-bit shift register for signal <ALU_component/addr_Rs1_0>.
+Unit <NYU_PROCESSOR> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 202
+ Flip-Flops                                            : 202
+# Shift Registers                                      : 2
+ 2-bit shift register                                  : 2
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : NYU_PROCESSOR.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 569
+#      GND                         : 1
+#      INV                         : 6
+#      LUT1                        : 18
+#      LUT2                        : 25
+#      LUT3                        : 49
+#      LUT4                        : 63
+#      LUT5                        : 94
+#      LUT6                        : 196
+#      MUXCY                       : 50
+#      MUXF7                       : 10
+#      VCC                         : 1
+#      XORCY                       : 56
+# FlipFlops/Latches                : 228
+#      FD                          : 115
+#      FDE                         : 25
+#      FDRE                        : 64
+#      LD                          : 16
+#      LDC                         : 8
+# Shift Registers                  : 2
+#      SRLC16E                     : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 27
+#      IBUF                        : 12
+#      OBUF                        : 15
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             227  out of  126800     0%  
+ Number of Slice LUTs:                  453  out of  63400     0%  
+    Number used as Logic:               451  out of  63400     0%  
+    Number used as Memory:                2  out of  19000     0%  
+       Number used as SRL:                2
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    543
+   Number with an unused Flip Flop:     316  out of    543    58%  
+   Number with an unused LUT:            90  out of    543    16%  
+   Number of fully used LUT-FF pairs:   137  out of    543    25%  
+   Number of unique control sets:        17
+
+IO Utilization: 
+ Number of IOs:                          35
+ Number of bonded IOBs:                  28  out of    210    13%  
+    IOB Flip Flops/Latches:               1
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------------------------------------------------------------------+--------------------------------+-------+
+Clock Signal                                                                                   | Clock buffer(FF name)          | Load  |
+-----------------------------------------------------------------------------------------------+--------------------------------+-------+
+instruction_display_reg_file_display_OR_190_o(instruction_display_reg_file_display_OR_190_o4:O)| NONE(*)(display_output_15)     | 15    |
+clk                                                                                            | BUFGP                          | 206   |
+N0                                                                                             | NONE(PC_reg_component/pc_reg_6)| 9     |
+-----------------------------------------------------------------------------------------------+--------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 11.548ns (Maximum Frequency: 86.595MHz)
+   Minimum input arrival time before clock: 5.352ns
+   Maximum output required time after clock: 3.349ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 11.548ns (frequency: 86.595MHz)
+  Total number of paths / destination ports: 10160954 / 271
+-------------------------------------------------------------------------
+Delay:               11.548ns (Levels of Logic = 16)
+  Source:            reg_file_component/ram_0_5 (FF)
+  Destination:       ALU_component/data_in_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: reg_file_component/ram_0_5 to ALU_component/data_in_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             4   0.478   0.959  reg_file_component/ram_0_5 (reg_file_component/ram_0_5)
+     LUT6:I0->O            1   0.124   0.919  reg_file_component/Mmux_data_out2_45_1 (reg_file_component/Mmux_data_out2_451)
+     LUT5:I0->O            4   0.124   0.441  ALU_component/data_out1[7]_data_out2[7]_div_51/Mmux_a[0]_GND_21_o_MUX_636_o171_SW1 (N169)
+     LUT6:I5->O            8   0.124   0.582  ALU_component/data_out1[7]_data_out2[7]_div_51/Mmux_a[0]_GND_21_o_MUX_636_o171 (ALU_component/data_out1[7]_data_out2[7]_div_51/a[7]_GND_21_o_MUX_629_o)
+     LUT6:I4->O           11   0.124   0.487  ALU_component/data_out1[7]_data_out2[7]_div_51/o<5>12 (ALU_component/data_out1[7]_data_out2[7]_div_51_OUT<5>)
+     LUT6:I5->O            1   0.124   0.716  ALU_component/data_out1[7]_data_out2[7]_div_51/o<3>1_SW1 (N55)
+     LUT6:I3->O            3   0.124   0.550  ALU_component/data_out1[7]_data_out2[7]_div_51/o<3>1 (ALU_component/data_out1[7]_data_out2[7]_div_51/o<3>1)
+     LUT6:I4->O           18   0.124   0.533  ALU_component/data_out1[7]_data_out2[7]_div_51/o<3>11 (ALU_component/data_out1[7]_data_out2[7]_div_51_OUT<3>)
+     LUT5:I4->O            2   0.124   0.405  ALU_component/data_out1[7]_data_out2[7]_div_51/Mmux_a[0]_GND_21_o_MUX_685_o141 (ALU_component/data_out1[7]_data_out2[7]_div_51/a[4]_GND_21_o_MUX_681_o)
+     MUXCY:DI->O           1   0.456   0.000  ALU_component/data_out1[7]_data_out2[7]_div_51/Madd_GND_21_o_b[7]_add_13_OUT_Madd_Madd_cy<4> (ALU_component/data_out1[7]_data_out2[7]_div_51/Madd_GND_21_o_b[7]_add_13_OUT_Madd_Madd_cy<4>)
+     XORCY:CI->O           5   0.510   0.448  ALU_component/data_out1[7]_data_out2[7]_div_51/Madd_GND_21_o_b[7]_add_13_OUT_Madd_Madd_xor<5> (ALU_component/data_out1[7]_data_out2[7]_div_51/GND_21_o_b[7]_add_13_OUT<5>)
+     LUT4:I3->O            1   0.124   0.000  ALU_component/data_out1[7]_data_out2[7]_div_51/Madd_GND_21_o_b[7]_add_15_OUT_Madd_Madd_lut<5> (ALU_component/data_out1[7]_data_out2[7]_div_51/Madd_GND_21_o_b[7]_add_15_OUT_Madd_Madd_lut<5>)
+     MUXCY:S->O            1   0.472   0.000  ALU_component/data_out1[7]_data_out2[7]_div_51/Madd_GND_21_o_b[7]_add_15_OUT_Madd_Madd_cy<5> (ALU_component/data_out1[7]_data_out2[7]_div_51/Madd_GND_21_o_b[7]_add_15_OUT_Madd_Madd_cy<5>)
+     XORCY:CI->O           1   0.510   0.421  ALU_component/data_out1[7]_data_out2[7]_div_51/Madd_GND_21_o_b[7]_add_15_OUT_Madd_Madd_xor<6> (ALU_component/data_out1[7]_data_out2[7]_div_51/GND_21_o_b[7]_add_15_OUT<6>)
+     LUT6:I5->O            2   0.124   0.427  ALU_component/Mmux_data_in[7]_data_out1[7]_mux_73_OUT23 (ALU_component/Mmux_data_in[7]_data_out1[7]_mux_73_OUT21)
+     LUT6:I5->O            1   0.124   0.716  ALU_component/Mmux_data_in[7]_data_out1[7]_mux_73_OUT24_SW2 (N85)
+     LUT5:I2->O            1   0.124   0.000  ALU_component/Mmux_data_in[7]_data_out1[7]_mux_73_OUT25 (ALU_component/data_in[7]_data_out1[7]_mux_73_OUT<0>)
+     FDE:D                     0.030          ALU_component/data_in_0
+    ----------------------------------------
+    Total                     11.548ns (3.944ns logic, 7.604ns route)
+                                       (34.2% logic, 65.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'instruction_display_reg_file_display_OR_190_o'
+  Total number of paths / destination ports: 806 / 15
+-------------------------------------------------------------------------
+Offset:              5.352ns (Levels of Logic = 7)
+  Source:            switch<7> (PAD)
+  Destination:       display_output_5 (LATCH)
+  Destination Clock: instruction_display_reg_file_display_OR_190_o falling
+
+  Data Path: switch<7> to display_output_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             7   0.001   0.959  switch_7_IBUF (switch_7_IBUF)
+     LUT5:I0->O            4   0.124   0.441  switch[4]_switch[8]_AND_54_o<4>11 (switch[4]_switch[8]_AND_54_o<4>1)
+     LUT4:I3->O            8   0.124   0.822  switch[5]_switch[8]_AND_61_o<5>1 (switch[5]_switch[8]_AND_61_o)
+     LUT4:I0->O            1   0.124   0.919  Mmux_GND_6_o_asynch_ram_data_out[5]_MUX_1041_o31 (Mmux_GND_6_o_asynch_ram_data_out[5]_MUX_1041_o3)
+     LUT5:I0->O            1   0.124   0.536  Mmux_GND_6_o_asynch_ram_data_out[5]_MUX_1041_o32 (Mmux_GND_6_o_asynch_ram_data_out[5]_MUX_1041_o31)
+     LUT6:I4->O            1   0.124   0.919  Mmux_GND_6_o_asynch_ram_data_out[5]_MUX_1041_o33 (Mmux_GND_6_o_asynch_ram_data_out[5]_MUX_1041_o32)
+     LUT5:I0->O            1   0.124   0.000  Mmux_GND_6_o_asynch_ram_data_out[5]_MUX_1041_o34 (GND_6_o_asynch_ram_data_out[5]_MUX_1041_o)
+     LD:D                      0.011          display_output_5
+    ----------------------------------------
+    Total                      5.352ns (0.756ns logic, 4.596ns route)
+                                       (14.1% logic, 85.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 64 / 64
+-------------------------------------------------------------------------
+Offset:              1.055ns (Levels of Logic = 1)
+  Source:            reset (PAD)
+  Destination:       reg_file_component/ram_0_7 (FF)
+  Destination Clock: clk rising
+
+  Data Path: reset to reg_file_component/ram_0_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            72   0.001   0.560  reset_IBUF (reset_IBUF)
+     FDRE:R                    0.494          reg_file_component/ram_3_0
+    ----------------------------------------
+    Total                      1.055ns (0.495ns logic, 0.560ns route)
+                                       (46.9% logic, 53.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 136 / 15
+-------------------------------------------------------------------------
+Offset:              3.120ns (Levels of Logic = 4)
+  Source:            anode_counter_16 (FF)
+  Destination:       ca_output<6> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: anode_counter_16 to ca_output<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              16   0.478   0.634  anode_counter_16 (anode_counter_16)
+     LUT3:I1->O            1   0.124   0.421  Mmux_segment_digit<3>1_SW0 (N2)
+     LUT6:I5->O            7   0.124   0.816  Mmux_segment_digit<3>1 (segment_digit<3>)
+     LUT4:I0->O            1   0.124   0.399  Mram_ca_output111 (ca_output_1_OBUF)
+     OBUF:I->O                 0.000          ca_output_1_OBUF (ca_output<1>)
+    ----------------------------------------
+    Total                      3.120ns (0.850ns logic, 2.270ns route)
+                                       (27.2% logic, 72.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'instruction_display_reg_file_display_OR_190_o'
+  Total number of paths / destination ports: 112 / 7
+-------------------------------------------------------------------------
+Offset:              3.349ns (Levels of Logic = 4)
+  Source:            display_output_0 (LATCH)
+  Destination:       ca_output<6> (PAD)
+  Source Clock:      instruction_display_reg_file_display_OR_190_o falling
+
+  Data Path: display_output_0 to ca_output<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.625   0.716  display_output_0 (display_output_0)
+     LUT3:I0->O            1   0.124   0.421  Mmux_segment_digit<0>1_SW0 (N6)
+     LUT6:I5->O            7   0.124   0.816  Mmux_segment_digit<0>1 (segment_digit<0>)
+     LUT4:I0->O            1   0.124   0.399  Mram_ca_output21 (ca_output_2_OBUF)
+     OBUF:I->O                 0.000          ca_output_2_OBUF (ca_output<2>)
+    ----------------------------------------
+    Total                      3.349ns (0.997ns logic, 2.352ns route)
+                                       (29.8% logic, 70.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   11.548|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock instruction_display_reg_file_display_OR_190_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |         |         |    3.895|         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 17.30 secs
+ 
+--> 
+
+Total memory usage is 447464 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  648 (   0 filtered)
+Number of infos    :   28 (   0 filtered)
+

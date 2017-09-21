@@ -1,0 +1,15 @@
+xst -intstyle ise -ifn "C:/Users/Calvin/Desktop/8_Bit_Processor/NYUProcessor/NYU_PROCESSOR.xst" -ofn "C:/Users/Calvin/Desktop/8_Bit_Processor/NYUProcessor/NYU_PROCESSOR.syr" 
+xst -intstyle ise -ifn "C:/Users/Calvin/Desktop/8_Bit_Processor/NYUProcessor/NYU_PROCESSOR.xst" -ofn "C:/Users/Calvin/Desktop/8_Bit_Processor/NYUProcessor/NYU_PROCESSOR.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys4DDR_Master.ucf -p xc7a100t-csg324-1 NYU_PROCESSOR.ngc NYU_PROCESSOR.ngd  
+map -intstyle ise -p xc7a100t-csg324-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -detail -ir off -pr off -lc off -power off -o NYU_PROCESSOR_map.ncd NYU_PROCESSOR.ngd NYU_PROCESSOR.pcf 
+par -w -intstyle ise -ol high -mt off NYU_PROCESSOR_map.ncd NYU_PROCESSOR.ncd NYU_PROCESSOR.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml NYU_PROCESSOR.twx NYU_PROCESSOR.ncd -o NYU_PROCESSOR.twr NYU_PROCESSOR.pcf -ucf Nexys4DDR_Master.ucf 
+bitgen -intstyle ise -f NYU_PROCESSOR.ut NYU_PROCESSOR.ncd 
+xst -intstyle ise -ifn "C:/Users/Calvin/Desktop/8_Bit_Processor/NYUProcessor/NYU_PROCESSOR.xst" -ofn "C:/Users/Calvin/Desktop/8_Bit_Processor/NYUProcessor/NYU_PROCESSOR.syr" 
+xst -intstyle ise -ifn "C:/Users/Calvin/Desktop/8_Bit_Processor/NYUProcessor/NYU_PROCESSOR.xst" -ofn "C:/Users/Calvin/Desktop/8_Bit_Processor/NYUProcessor/NYU_PROCESSOR.syr" 
+xst -intstyle ise -ifn "C:/Users/Calvin/Desktop/8_Bit_Processor/NYUProcessor/NYU_PROCESSOR.xst" -ofn "C:/Users/Calvin/Desktop/8_Bit_Processor/NYUProcessor/NYU_PROCESSOR.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys4DDR_Master.ucf -p xc7a100t-csg324-1 NYU_PROCESSOR.ngc NYU_PROCESSOR.ngd  
+map -intstyle ise -p xc7a100t-csg324-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -detail -ir off -pr off -lc off -power off -o NYU_PROCESSOR_map.ncd NYU_PROCESSOR.ngd NYU_PROCESSOR.pcf 
+par -w -intstyle ise -ol high -mt off NYU_PROCESSOR_map.ncd NYU_PROCESSOR.ncd NYU_PROCESSOR.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml NYU_PROCESSOR.twx NYU_PROCESSOR.ncd -o NYU_PROCESSOR.twr NYU_PROCESSOR.pcf -ucf Nexys4DDR_Master.ucf 
+bitgen -intstyle ise -f NYU_PROCESSOR.ut NYU_PROCESSOR.ncd 

@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\NYU_PROCESSOR.ncd
+OUTFILE=C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor\NYU_PROCESSOR.bit
+FAMILY=Artix7
+PART=xc7a100t-1csg324
+WORKINGDIR=C:\Users\Calvin\Desktop\8_Bit_Processor\NYUProcessor
+LICENSE=WebPack
+USER_INFO=210878322_0_0_335

@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Calvin/Desktop/8_Bit_Processor/NYUProcessor/NYU_PROCESSOR_isim_beh.exe" -prj "C:/Users/Calvin/Desktop/8_Bit_Processor/NYUProcessor/NYU_PROCESSOR_beh.prj" "work.NYU_PROCESSOR" 

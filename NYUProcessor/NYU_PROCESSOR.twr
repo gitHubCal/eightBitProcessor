@@ -1,0 +1,404 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 1
+-n 3 -fastpaths -xml NYU_PROCESSOR.twx NYU_PROCESSOR.ncd -o NYU_PROCESSOR.twr
+NYU_PROCESSOR.pcf -ucf Nexys4DDR_Master.ucf
+
+Design file:              NYU_PROCESSOR.ncd
+Physical constraint file: NYU_PROCESSOR.pcf
+Device,package,speed:     xc7a100t,csg324,C,-1 (PRODUCTION 1.10 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clk
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+reset       |    1.602(R)|      SLOW  |    0.885(R)|      SLOW  |clk_BUFGP         |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+an_output<0>|        13.413(R)|      SLOW  |         4.003(R)|      FAST  |clk_BUFGP         |   0.000|
+an_output<1>|        13.677(R)|      SLOW  |         4.098(R)|      FAST  |clk_BUFGP         |   0.000|
+an_output<2>|        13.210(R)|      SLOW  |         4.132(R)|      FAST  |clk_BUFGP         |   0.000|
+an_output<3>|        13.361(R)|      SLOW  |         4.142(R)|      FAST  |clk_BUFGP         |   0.000|
+an_output<4>|        12.141(R)|      SLOW  |         3.605(R)|      FAST  |clk_BUFGP         |   0.000|
+an_output<5>|        12.418(R)|      SLOW  |         3.707(R)|      FAST  |clk_BUFGP         |   0.000|
+an_output<6>|        14.979(R)|      SLOW  |         4.884(R)|      FAST  |clk_BUFGP         |   0.000|
+an_output<7>|        14.900(R)|      SLOW  |         4.936(R)|      FAST  |clk_BUFGP         |   0.000|
+ca_output<0>|        15.230(R)|      SLOW  |         4.110(R)|      FAST  |clk_BUFGP         |   0.000|
+ca_output<1>|        15.362(R)|      SLOW  |         4.229(R)|      FAST  |clk_BUFGP         |   0.000|
+ca_output<2>|        15.129(R)|      SLOW  |         4.080(R)|      FAST  |clk_BUFGP         |   0.000|
+ca_output<3>|        15.770(R)|      SLOW  |         4.334(R)|      FAST  |clk_BUFGP         |   0.000|
+ca_output<4>|        15.593(R)|      SLOW  |         4.242(R)|      FAST  |clk_BUFGP         |   0.000|
+ca_output<5>|        15.486(R)|      SLOW  |         4.332(R)|      FAST  |clk_BUFGP         |   0.000|
+ca_output<6>|        16.030(R)|      SLOW  |         4.509(R)|      FAST  |clk_BUFGP         |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock instruction_display to Pad
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                                             | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)                            | Phase  |
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+ca_output<0>|        16.987(F)|      SLOW  |         4.503(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<1>|        17.458(F)|      SLOW  |         4.676(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<2>|        16.851(F)|      SLOW  |         4.473(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<3>|        17.866(F)|      SLOW  |         4.711(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<4>|        17.689(F)|      SLOW  |         4.687(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<5>|        17.470(F)|      SLOW  |         4.690(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<6>|        18.126(F)|      SLOW  |         4.888(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+
+Clock reg_file_display to Pad
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                                             | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)                            | Phase  |
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+ca_output<0>|        16.162(F)|      SLOW  |         4.201(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<1>|        16.633(F)|      SLOW  |         4.374(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<2>|        16.026(F)|      SLOW  |         4.171(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<3>|        17.041(F)|      SLOW  |         4.409(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<4>|        16.864(F)|      SLOW  |         4.385(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<5>|        16.645(F)|      SLOW  |         4.388(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<6>|        17.301(F)|      SLOW  |         4.586(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+
+Clock switch<1> to Pad
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                                             | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)                            | Phase  |
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+ca_output<0>|        17.684(F)|      SLOW  |         4.688(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<1>|        18.155(F)|      SLOW  |         4.861(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<2>|        17.548(F)|      SLOW  |         4.658(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<3>|        18.563(F)|      SLOW  |         4.896(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<4>|        18.386(F)|      SLOW  |         4.872(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<5>|        18.167(F)|      SLOW  |         4.875(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<6>|        18.823(F)|      SLOW  |         5.073(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+
+Clock switch<2> to Pad
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                                             | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)                            | Phase  |
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+ca_output<0>|        17.987(F)|      SLOW  |         4.502(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<1>|        18.458(F)|      SLOW  |         4.675(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<2>|        17.851(F)|      SLOW  |         4.472(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<3>|        18.866(F)|      SLOW  |         4.710(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<4>|        18.689(F)|      SLOW  |         4.686(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<5>|        18.470(F)|      SLOW  |         4.689(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<6>|        19.126(F)|      SLOW  |         4.887(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+
+Clock switch<3> to Pad
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                                             | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)                            | Phase  |
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+ca_output<0>|        17.625(F)|      SLOW  |         4.521(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<1>|        18.096(F)|      SLOW  |         4.694(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<2>|        17.489(F)|      SLOW  |         4.491(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<3>|        18.504(F)|      SLOW  |         4.729(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<4>|        18.327(F)|      SLOW  |         4.705(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<5>|        18.108(F)|      SLOW  |         4.708(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<6>|        18.764(F)|      SLOW  |         4.906(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+
+Clock switch<4> to Pad
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                                             | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)                            | Phase  |
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+ca_output<0>|        17.501(F)|      SLOW  |         4.475(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<1>|        17.972(F)|      SLOW  |         4.648(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<2>|        17.365(F)|      SLOW  |         4.445(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<3>|        18.380(F)|      SLOW  |         4.683(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<4>|        18.203(F)|      SLOW  |         4.659(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<5>|        17.984(F)|      SLOW  |         4.662(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<6>|        18.640(F)|      SLOW  |         4.860(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+
+Clock switch<5> to Pad
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                                             | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)                            | Phase  |
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+ca_output<0>|        18.353(F)|      SLOW  |         4.498(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<1>|        18.824(F)|      SLOW  |         4.671(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<2>|        18.217(F)|      SLOW  |         4.468(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<3>|        19.232(F)|      SLOW  |         4.706(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<4>|        19.055(F)|      SLOW  |         4.682(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<5>|        18.836(F)|      SLOW  |         4.685(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<6>|        19.492(F)|      SLOW  |         4.883(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+
+Clock switch<6> to Pad
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                                             | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)                            | Phase  |
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+ca_output<0>|        17.744(F)|      SLOW  |         4.655(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<1>|        18.215(F)|      SLOW  |         4.828(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<2>|        17.608(F)|      SLOW  |         4.625(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<3>|        18.623(F)|      SLOW  |         4.863(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<4>|        18.446(F)|      SLOW  |         4.839(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<5>|        18.227(F)|      SLOW  |         4.842(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<6>|        18.883(F)|      SLOW  |         5.040(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+
+Clock switch<7> to Pad
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                                             | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)                            | Phase  |
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+ca_output<0>|        18.325(F)|      SLOW  |         4.799(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<1>|        18.796(F)|      SLOW  |         4.972(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<2>|        18.189(F)|      SLOW  |         4.769(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<3>|        19.204(F)|      SLOW  |         5.007(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<4>|        19.027(F)|      SLOW  |         4.983(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<5>|        18.808(F)|      SLOW  |         4.986(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<6>|        19.464(F)|      SLOW  |         5.184(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+
+Clock switch<8> to Pad
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                                             | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)                            | Phase  |
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+ca_output<0>|        18.336(F)|      SLOW  |         5.142(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<1>|        18.807(F)|      SLOW  |         5.315(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<2>|        18.200(F)|      SLOW  |         5.112(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<3>|        19.215(F)|      SLOW  |         5.350(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<4>|        19.038(F)|      SLOW  |         5.326(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<5>|        18.819(F)|      SLOW  |         5.329(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+ca_output<6>|        19.475(F)|      SLOW  |         5.527(F)|      FAST  |instruction_display_reg_file_display_OR_190_o|   0.000|
+------------+-----------------+------------+-----------------+------------+---------------------------------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   14.461|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock instruction_display
+-------------------+---------+---------+---------+---------+
+                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------+---------+---------+---------+---------+
+clk                |         |         |    3.573|         |
+instruction_display|         |         |    2.622|    2.622|
+reg_file_display   |         |         |    0.656|    0.656|
+switch<1>          |         |         |    3.729|    3.729|
+switch<2>          |         |         |    3.928|    3.928|
+switch<3>          |         |         |    2.830|    2.830|
+switch<4>          |         |         |    2.780|    2.780|
+switch<5>          |         |         |    3.215|    3.215|
+switch<6>          |         |         |    2.561|    2.561|
+switch<7>          |         |         |    3.668|    3.668|
+switch<8>          |         |         |    3.227|    3.227|
+-------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock reg_file_display
+-------------------+---------+---------+---------+---------+
+                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------+---------+---------+---------+---------+
+clk                |         |         |    3.573|         |
+instruction_display|         |         |    3.310|    3.310|
+reg_file_display   |         |         |    1.344|    1.344|
+switch<1>          |         |         |    4.417|    4.417|
+switch<2>          |         |         |    4.616|    4.616|
+switch<3>          |         |         |    3.518|    3.518|
+switch<4>          |         |         |    3.468|    3.468|
+switch<5>          |         |         |    3.903|    3.903|
+switch<6>          |         |         |    3.249|    3.249|
+switch<7>          |         |         |    4.356|    4.356|
+switch<8>          |         |         |    3.915|    3.915|
+-------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock switch<1>
+-------------------+---------+---------+---------+---------+
+                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------+---------+---------+---------+---------+
+clk                |         |         |    3.573|         |
+instruction_display|         |         |    2.160|    2.160|
+reg_file_display   |         |         |    0.194|    0.194|
+switch<1>          |         |         |    3.267|    3.267|
+switch<2>          |         |         |    3.466|    3.466|
+switch<3>          |         |         |    2.368|    2.368|
+switch<4>          |         |         |    2.318|    2.318|
+switch<5>          |         |         |    2.753|    2.753|
+switch<6>          |         |         |    2.099|    2.099|
+switch<7>          |         |         |    3.206|    3.206|
+switch<8>          |         |         |    2.765|    2.765|
+-------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock switch<2>
+-------------------+---------+---------+---------+---------+
+                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------+---------+---------+---------+---------+
+clk                |         |         |    3.573|         |
+instruction_display|         |         |    2.606|    2.606|
+reg_file_display   |         |         |    0.640|    0.640|
+switch<1>          |         |         |    3.713|    3.713|
+switch<2>          |         |         |    3.912|    3.912|
+switch<3>          |         |         |    2.814|    2.814|
+switch<4>          |         |         |    2.764|    2.764|
+switch<5>          |         |         |    3.199|    3.199|
+switch<6>          |         |         |    2.545|    2.545|
+switch<7>          |         |         |    3.652|    3.652|
+switch<8>          |         |         |    3.211|    3.211|
+-------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock switch<3>
+-------------------+---------+---------+---------+---------+
+                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------+---------+---------+---------+---------+
+clk                |         |         |    3.573|         |
+instruction_display|         |         |    2.469|    2.469|
+reg_file_display   |         |         |    0.503|    0.503|
+switch<1>          |         |         |    3.576|    3.576|
+switch<2>          |         |         |    3.775|    3.775|
+switch<3>          |         |         |    2.677|    2.677|
+switch<4>          |         |         |    2.627|    2.627|
+switch<5>          |         |         |    3.062|    3.062|
+switch<6>          |         |         |    2.408|    2.408|
+switch<7>          |         |         |    3.515|    3.515|
+switch<8>          |         |         |    3.074|    3.074|
+-------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock switch<4>
+-------------------+---------+---------+---------+---------+
+                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------+---------+---------+---------+---------+
+clk                |         |         |    3.573|         |
+instruction_display|         |         |    2.644|    2.644|
+reg_file_display   |         |         |    0.678|    0.678|
+switch<1>          |         |         |    3.751|    3.751|
+switch<2>          |         |         |    3.950|    3.950|
+switch<3>          |         |         |    2.852|    2.852|
+switch<4>          |         |         |    2.802|    2.802|
+switch<5>          |         |         |    3.237|    3.237|
+switch<6>          |         |         |    2.583|    2.583|
+switch<7>          |         |         |    3.690|    3.690|
+switch<8>          |         |         |    3.249|    3.249|
+-------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock switch<5>
+-------------------+---------+---------+---------+---------+
+                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------+---------+---------+---------+---------+
+clk                |         |         |    3.573|         |
+instruction_display|         |         |    2.691|    2.691|
+reg_file_display   |         |         |    0.725|    0.725|
+switch<1>          |         |         |    3.798|    3.798|
+switch<2>          |         |         |    3.997|    3.997|
+switch<3>          |         |         |    2.899|    2.899|
+switch<4>          |         |         |    2.849|    2.849|
+switch<5>          |         |         |    3.284|    3.284|
+switch<6>          |         |         |    2.630|    2.630|
+switch<7>          |         |         |    3.737|    3.737|
+switch<8>          |         |         |    3.296|    3.296|
+-------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock switch<6>
+-------------------+---------+---------+---------+---------+
+                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------+---------+---------+---------+---------+
+clk                |         |         |    3.573|         |
+instruction_display|         |         |    2.078|    2.078|
+reg_file_display   |         |         |    0.213|    0.213|
+switch<1>          |         |         |    3.185|    3.185|
+switch<2>          |         |         |    3.384|    3.384|
+switch<3>          |         |         |    2.286|    2.286|
+switch<4>          |         |         |    2.236|    2.236|
+switch<5>          |         |         |    2.671|    2.671|
+switch<6>          |         |         |    2.017|    2.017|
+switch<7>          |         |         |    3.124|    3.124|
+switch<8>          |         |         |    2.683|    2.683|
+-------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock switch<7>
+-------------------+---------+---------+---------+---------+
+                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------+---------+---------+---------+---------+
+clk                |         |         |    3.573|         |
+instruction_display|         |         |    1.896|    1.896|
+reg_file_display   |         |         |    0.069|    0.069|
+switch<1>          |         |         |    3.003|    3.003|
+switch<2>          |         |         |    3.202|    3.202|
+switch<3>          |         |         |    2.104|    2.104|
+switch<4>          |         |         |    2.054|    2.054|
+switch<5>          |         |         |    2.489|    2.489|
+switch<6>          |         |         |    1.835|    1.835|
+switch<7>          |         |         |    2.942|    2.942|
+switch<8>          |         |         |    2.501|    2.501|
+-------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock switch<8>
+-------------------+---------+---------+---------+---------+
+                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------+---------+---------+---------+---------+
+clk                |         |         |    3.573|         |
+instruction_display|         |         |    1.720|    1.720|
+reg_file_display   |         |         |   -0.246|   -0.246|
+switch<1>          |         |         |    2.827|    2.827|
+switch<2>          |         |         |    3.026|    3.026|
+switch<3>          |         |         |    1.928|    1.928|
+switch<4>          |         |         |    1.878|    1.878|
+switch<5>          |         |         |    2.313|    2.313|
+switch<6>          |         |         |    1.659|    1.659|
+switch<7>          |         |         |    2.766|    2.766|
+switch<8>          |         |         |    2.325|    2.325|
+-------------------+---------+---------+---------+---------+
+
+
+Analysis completed Tue Apr 19 18:29:42 2016 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 616 MB
+
+
+
